@@ -1,0 +1,9 @@
+# 项目依赖清单
+# 安装方式: pip install -r requirements.txt
+#
+# 常用机器学习依赖示例（按需启用）：
+# numpy
+# pandas
+# scikit-learn
+# matplotlib
+# jupyter

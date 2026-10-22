@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# IDE
+.idea/
+.vscode/
+
+# 数据文件（保留目录占位，不提交实际数据）
+data/raw/*
+!data/raw/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+
+# 模型文件（保留目录占位）
+models/*
+!models/.gitkeep
+
+# 生成的图表
+reports/figures/*
+!reports/figures/.gitkeep
+
+# 系统文件
+.DS_Store
+Thumbs.db
