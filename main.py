@@ -1,14 +1,123 @@
- # 这是一个示例 Python 脚本。
+"""KNN 最小链路演示：距离度量、手写实现与 sklearn 对照。"""
 
-# 按 Shift+F10 执行或将其替换为您的代码。
-# 按 双击 Shift 在所有地方搜索类、文件、工具窗口、操作和设置。
+from pathlib import Path
+
+import matplotlib.pyplot as plt
+import numpy as np
+from sklearn.model_selection import StratifiedKFold
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.pipeline import make_pipeline
+from sklearn.preprocessing import StandardScaler
+
+from src.data.loaders import load_iris_data
+from src.models.knn import KNNClassifier
+from src.visualization.plots import plot_k_selection, plot_knn_boundaries
+
+FIGURES_DIR = Path(__file__).resolve().parent / "reports" / "figures"
 
 
-def print_hi(name):
-    # 在下面的代码行中使用断点来调试脚本。
-    print(f'Hi, {name}')  # 按 Ctrl+F8 切换断点。
+def cross_validate_accuracy(make_model, X, y, cv):
+    """用给定划分循环训练/预测，返回各折准确率的平均值。"""
+    scores = [
+        np.mean(make_model().fit(X[train], y[train]).predict(X[test]) == y[test])
+        for train, test in cv.split(X, y)
+    ]
+    return float(np.mean(scores))
 
 
-# 按装订区域中的绿色按钮以运行脚本。
-if __name__ == '__main__':
-    print_hi('PyCharm')
+def demo_iris():
+    X, y, feature_names, target_names = load_iris_data()
+    print(f"鸢尾花：{X.shape[0]} 个样本，{X.shape[1]} 个特征，{len(target_names)} 个类别")
+    print(f"特征：{feature_names}\n")
+
+    cv = StratifiedKFold(10, shuffle=True, random_state=0)
+    print("10 折交叉验证准确率（k=5）")
+    print(f"{'距离':<10}{'手写 KNN':>10}{'sklearn':>10}")
+    for metric in ("euclidean", "manhattan", "chebyshev"):
+        ours = cross_validate_accuracy(lambda: KNNClassifier(5, metric=metric), X, y, cv)
+        ref = cross_validate_accuracy(
+            lambda: KNeighborsClassifier(5, metric=metric), X, y, cv
+        )
+        print(f"{metric:<10}{ours:>10.3f}{ref:>10.3f}")
+
+
+def demo_tie():
+    X = np.array([[3, 4], [7, 4], [3, 7], [8, 3], [4, 2], [6, 2], [4, 8], [8, 1]])
+    y = np.array(["朱"] * 4 + ["墨"] * 4)
+    q = np.array([[4, 4]])
+
+    print("\n平票演示：k=4，待测点 (4,4)，2 票对 2 票")
+    for weights in ("uniform", "distance"):
+        ours = KNNClassifier(4, weights=weights).fit(X, y).predict(q)[0]
+        ref = KNeighborsClassifier(4, weights=weights).fit(X, y).predict(q)[0]
+        print(f"weights={weights:<9} 手写：{ours}  sklearn：{ref}")
+
+
+def demo_student():
+    X = np.array([
+        [90, 95], [85, 88], [78, 90], [82, 76],
+        [40, 30], [50, 45], [35, 60], [55, 35],
+    ])
+    y = np.array([1, 1, 1, 1, 0, 0, 0, 0])
+    student = np.array([[70, 75]])
+    names = ["挂科", "通过"]
+
+    print("\n学生通过预测：k=8，4 个通过 / 4 个挂科")
+    for weights in ("uniform", "distance"):
+        ours = KNNClassifier(8, weights=weights).fit(X, y).predict(student)[0]
+        ref = KNeighborsClassifier(8, weights=weights).fit(X, y).predict(student)[0]
+        print(f"weights={weights:<9} 手写：{names[ours]}  sklearn：{names[ref]}")
+
+
+def demo_scaling():
+    X, y, _, _ = load_iris_data()
+    X_bad = X.copy()
+    X_bad[:, 0] *= 1000
+
+    cv = StratifiedKFold(10, shuffle=True, random_state=0)
+    raw = cross_validate_accuracy(lambda: KNNClassifier(5), X, y, cv)
+    bad = cross_validate_accuracy(lambda: KNNClassifier(5), X_bad, y, cv)
+    fixed = cross_validate_accuracy(
+        lambda: make_pipeline(StandardScaler(), KNNClassifier(5)), X_bad, y, cv
+    )
+
+    print("\n标准化演示：人为把萼片长度放大 1000 倍（k=5）")
+    print(f"原始数据           {raw:.3f}")
+    print(f"放大后未标准化     {bad:.3f}")
+    print(f"放大后 + 标准化    {fixed:.3f}")
+
+
+def demo_k_selection():
+    X, y, _, _ = load_iris_data()
+    cv = StratifiedKFold(10, shuffle=True, random_state=0)
+    ks = list(range(1, 31))
+    scores = [cross_validate_accuracy(lambda k=k: KNNClassifier(k), X, y, cv) for k in ks]
+    best_k = ks[int(np.argmax(scores))]
+
+    print(f"\nk 选择：最佳 k = {best_k}，交叉验证准确率 {max(scores):.3f}")
+    plot_k_selection(ks, scores, best_k, save_path=FIGURES_DIR / "k_selection.png")
+    print(f"k 曲线已保存：{FIGURES_DIR / 'k_selection.png'}")
+
+
+def demo_visualization():
+    X, y, feature_names, target_names = load_iris_data()
+    save_path = FIGURES_DIR / "knn_boundaries.png"
+    fig = plot_knn_boundaries(
+        X[:, :2],
+        y,
+        ks=(1, 5, 15),
+        feature_names=(feature_names[0], feature_names[1]),
+        class_names=target_names,
+        save_path=save_path,
+    )
+    plt.close(fig)
+    print(f"\n决策边界图已保存：{save_path}")
+
+
+if __name__ == "__main__":
+    demo_iris()
+    demo_tie()
+    demo_student()
+    demo_scaling()
+    demo_k_selection()
+    demo_visualization()
