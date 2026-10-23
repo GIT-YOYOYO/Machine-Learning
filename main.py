@@ -4,12 +4,15 @@ from pathlib import Path
 
 import matplotlib.pyplot as plt
 import numpy as np
-from sklearn.model_selection import StratifiedKFold
+from sklearn.metrics import accuracy_score, confusion_matrix
+from sklearn.model_selection import StratifiedKFold, train_test_split
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.pipeline import make_pipeline
 from sklearn.preprocessing import StandardScaler
 
-from src.data.loaders import load_iris_data
+from src.data.loaders import load_apple_data, load_iris_data
+from src.evaluation.metrics import accuracy_score as custom_accuracy_score
+from src.evaluation.metrics import confusion_matrix as custom_confusion_matrix
 from src.models.knn import KNNClassifier
 from src.visualization.plots import plot_k_selection, plot_knn_boundaries
 
@@ -69,6 +72,66 @@ def demo_student():
         print(f"weights={weights:<9} 手写：{names[ours]}  sklearn：{names[ref]}")
 
 
+def demo_split_variance():
+    X, y, _, _ = load_iris_data()
+    # 与图 5-1 的二维决策边界保持同一口径
+    X = X[:, :2]
+    print("\n单次划分的波动：萼片两个特征，test_size=0.3，用测试集选 k")
+    for seed in (0, 1, 7, 42, 2026):
+        X_train, X_test, y_train, y_test = train_test_split(
+            X, y, test_size=0.3, stratify=y, random_state=seed
+        )
+        scores = [
+            KNeighborsClassifier(k).fit(X_train, y_train).score(X_test, y_test)
+            for k in range(1, 81)
+        ]
+        best_k = int(np.argmax(scores)) + 1
+        print(f"seed={seed:<5} 最佳 k={best_k:<3} 测试准确率={max(scores):.3f}")
+
+
+def demo_confusion_matrix():
+    X, y, _, target_names = load_iris_data()
+    X_train, X_test, y_train, y_test = train_test_split(
+        X, y, test_size=0.2, stratify=y, random_state=42
+    )
+    y_pred = KNeighborsClassifier(7).fit(X_train, y_train).predict(X_test)
+
+    print("\n混淆矩阵：iris，k=7，test_size=0.2，stratify=y")
+    print(f"类别顺序：{target_names}")
+    print(
+        f"手写准确率：{custom_accuracy_score(y_test, y_pred):.3f}，"
+        f"sklearn 准确率：{accuracy_score(y_test, y_pred):.3f}"
+    )
+    print("手写混淆矩阵：")
+    print(custom_confusion_matrix(y_test, y_pred))
+    print("sklearn 混淆矩阵：")
+    print(confusion_matrix(y_test, y_pred))
+
+
+def demo_apple_scale():
+    X, y, _ = load_apple_data()
+    query = np.array([[200.0, 15.0]])
+
+    print("\n苹果案例：重量会误导邻居，甜度才决定标签")
+    print("待测苹果：重量 200 g，甜度 15 °Brix（真实类别：糖心）")
+    for name, use_scaler in (("未标准化", False), ("标准化", True)):
+        if use_scaler:
+            scaler = StandardScaler().fit(X)
+            X_used = scaler.transform(X)
+            query_used = scaler.transform(query)
+        else:
+            X_used = X
+            query_used = query
+
+        model = KNeighborsClassifier(3).fit(X_used, y)
+        neighbors = model.kneighbors(query_used, return_distance=False)[0]
+        pred = int(model.predict(query_used)[0])
+        print(
+            f"{name:<5} 预测：{'糖心' if pred == 1 else '普通'}，"
+            f"3 个邻居的真实标签：{y[neighbors].tolist()}"
+        )
+
+
 def demo_scaling():
     X, y, _, _ = load_iris_data()
     X_bad = X.copy()
@@ -118,6 +181,9 @@ if __name__ == "__main__":
     demo_iris()
     demo_tie()
     demo_student()
+    demo_split_variance()
+    demo_confusion_matrix()
+    demo_apple_scale()
     demo_scaling()
     demo_k_selection()
     demo_visualization()

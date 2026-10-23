@@ -2,7 +2,9 @@ import numpy as np
 import pytest
 from sklearn.datasets import load_iris
 from sklearn.neighbors import KNeighborsClassifier
+from sklearn.preprocessing import StandardScaler
 
+from src.data.loaders import load_apple_data
 from src.models.knn import KNNClassifier
 
 X_TOY = np.array([[3, 4], [7, 4], [3, 7], [8, 3], [4, 2], [6, 2], [4, 8], [8, 1]])
@@ -54,3 +56,21 @@ def test_predictions_match_sklearn_on_iris():
 def test_invalid_neighbor_count_raises():
     with pytest.raises(ValueError, match="不能超过训练样本数"):
         KNNClassifier(n_neighbors=20).fit(X_TOY, Y_TOY)
+
+
+def test_scaling_fixes_apple_distance_dominance():
+    X, y, _ = load_apple_data()
+    query = np.array([[200.0, 15.0]])
+
+    raw = KNNClassifier(n_neighbors=3).fit(X, y).predict(query)[0]
+    scaler = StandardScaler().fit(X)
+    scaled = (
+        KNNClassifier(n_neighbors=3)
+        .fit(scaler.transform(X), y)
+        .predict(scaler.transform(query))[0]
+    )
+
+    # 未标准化时重量主导，三个邻居都是普通苹果
+    assert raw == 0
+    # 标准化后甜度主导，三个邻居都是糖心苹果
+    assert scaled == 1
