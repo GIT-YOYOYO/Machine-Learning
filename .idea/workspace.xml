@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="4f5326c4-040b-4749-a846-bae102172d5d" name="更改" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/机器学习.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/机器学习.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/processed/.gitkeep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/raw/.gitkeep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/.gitkeep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notebooks/.gitkeep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/figures/.gitkeep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/loaders.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/evaluation/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/evaluation/leakage.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/evaluation/metrics.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/distance.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/knn.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/search.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/visualization/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/visualization/plots.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_distance.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_knn.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_leakage.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_loaders.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_metrics.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_search.py" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Jupyter Notebook" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "LXK-lxk-0218"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/GIT-YOYOYO/Machine-Learning.git",
+    "accountId": "7f006e06-4013-43f6-8869-f858e7d9a07f"
+  }
+}]]></component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 3
+}]]></component>
+  <component name="ProjectId" id="3LGm8Khloh7IrTlsgs9TZzpvdtu" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "python.packages.toolwindow.project.migrated.to.right.top.v2": "true"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-73a66231627c-5bd6d13a2a75-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-262.10968.92" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="默认任务">
+      <changelist id="4f5326c4-040b-4749-a846-bae102172d5d" name="更改" comment="" />
+      <created>1793088618892</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1793088618892</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
