@@ -11,9 +11,11 @@ from sklearn.pipeline import make_pipeline
 from sklearn.preprocessing import StandardScaler
 
 from src.data.loaders import load_apple_data, load_iris_data
+from src.evaluation.leakage import compare_feature_selection_leakage
 from src.evaluation.metrics import accuracy_score as custom_accuracy_score
 from src.evaluation.metrics import confusion_matrix as custom_confusion_matrix
 from src.models.knn import KNNClassifier
+from src.models.search import grid_search_knn
 from src.visualization.plots import plot_k_selection, plot_knn_boundaries
 
 FIGURES_DIR = Path(__file__).resolve().parent / "reports" / "figures"
@@ -150,6 +152,29 @@ def demo_scaling():
     print(f"放大后 + 标准化    {fixed:.3f}")
 
 
+def demo_leakage():
+    leak, correct = compare_feature_selection_leakage()
+    print("\n数据泄露：100 个样本、5000 个纯噪声特征")
+    print(f"全量数据上 SelectKBest（泄露）：{leak:.3f}")
+    print(f"Pipeline 内逐折 SelectKBest：{correct:.3f}")
+    print("数据没有真实规律，正确分数应接近 0.5；泄露分数是假象。")
+
+
+def demo_grid_search():
+    X, y, _, _ = load_iris_data()
+    X_train, X_test, y_train, y_test = train_test_split(
+        X, y, test_size=0.2, stratify=y, random_state=42
+    )
+    cv = StratifiedKFold(5, shuffle=True, random_state=0)
+    search = grid_search_knn(X_train, y_train, cv=cv)
+
+    print("\n网格搜索：iris，搜索 k / weights / p")
+    print(f"最优参数：{search.best_params_}")
+    print(f"训练集 5 折交叉验证最高准确率：{search.best_score_:.3f}")
+    print(f"测试集准确率：{search.best_estimator_.score(X_test, y_test):.3f}")
+    print("测试集只用于最终评估，不参与选参。")
+
+
 def demo_k_selection():
     X, y, _, _ = load_iris_data()
     cv = StratifiedKFold(10, shuffle=True, random_state=0)
@@ -182,8 +207,10 @@ if __name__ == "__main__":
     demo_tie()
     demo_student()
     demo_split_variance()
+    demo_k_selection()
     demo_confusion_matrix()
     demo_apple_scale()
     demo_scaling()
-    demo_k_selection()
+    demo_leakage()
+    demo_grid_search()
     demo_visualization()
