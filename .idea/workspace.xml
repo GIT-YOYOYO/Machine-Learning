@@ -4,39 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f5326c4-040b-4749-a846-bae102172d5d" name="更改" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/机器学习.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/机器学习.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/processed/.gitkeep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/raw/.gitkeep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/.gitkeep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/notebooks/.gitkeep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reports/figures/.gitkeep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/loaders.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/evaluation/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/evaluation/leakage.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/evaluation/metrics.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/distance.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/knn.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/search.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/visualization/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/visualization/plots.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_distance.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_knn.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_leakage.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_loaders.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_metrics.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_search.py" beforeDir="false" />
+    <list default="true" id="4f5326c4-040b-4749-a846-bae102172d5d" name="更改" comment="Merge remote-tracking branch 'origin/master'">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notebooks/KNN课堂笔记.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/notebooks/KNN课堂笔记.ipynb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,6 +35,65 @@
     "accountId": "7f006e06-4013-43f6-8869-f858e7d9a07f"
   }
 }]]></component>
+  <component name="NextEditCompletionFeaturesState">
+    <decayedCancelled>
+      <entry key="MS100" value="1.0" />
+      <entry key="MS500" value="1.0" />
+      <entry key="S2" value="1.0000394633909364" />
+      <entry key="S5" value="1.0367929323467935" />
+      <entry key="S10" value="1.4720660986849194" />
+      <entry key="S30" value="5.034803297991847" />
+      <entry key="S60" value="8.659837787000782" />
+      <entry key="M2" value="12.302105198851521" />
+      <entry key="M5" value="17.438308437417362" />
+      <entry key="M10" value="20.80454383997711" />
+      <entry key="M15" value="22.283705531355373" />
+      <entry key="M30" value="24.000183618343318" />
+      <entry key="H1" value="24.96145800434266" />
+      <entry key="H2" value="25.470635608058565" />
+      <entry key="H4" value="25.732737887883147" />
+      <entry key="D1" value="25.955093085716218" />
+      <entry key="W1" value="25.993575766412334" />
+    </decayedCancelled>
+    <decayedSelected>
+      <entry key="MS100" value="9.695966603459322E-92" />
+      <entry key="MS500" value="6.27079837478248E-19" />
+      <entry key="S2" value="2.9747041969501467E-5" />
+      <entry key="S5" value="0.020003788683749572" />
+      <entry key="S10" value="0.20285266380498831" />
+      <entry key="S30" value="1.248213128457342" />
+      <entry key="S60" value="2.178864284359521" />
+      <entry key="M2" value="3.0946367876042142" />
+      <entry key="M5" value="4.472813253072904" />
+      <entry key="M10" value="5.43963862770688" />
+      <entry key="M15" value="5.876552369925417" />
+      <entry key="M30" value="6.391238489769884" />
+      <entry key="H1" value="6.682711769980344" />
+      <entry key="H2" value="6.837972945517797" />
+      <entry key="H4" value="6.918120384500076" />
+      <entry key="D1" value="6.9862313390659345" />
+      <entry key="W1" value="6.998030035915409" />
+    </decayedSelected>
+    <decayedShown>
+      <entry key="MS100" value="0.3584888120039568" />
+      <entry key="MS500" value="0.8145075630702153" />
+      <entry key="S2" value="0.9500515488221252" />
+      <entry key="S5" value="1.0291512941060548" />
+      <entry key="S10" value="1.618827442200674" />
+      <entry key="S30" value="6.153352170193927" />
+      <entry key="S60" value="10.71753433888974" />
+      <entry key="M2" value="15.308774673474623" />
+      <entry key="M5" value="21.861484461901085" />
+      <entry key="M10" value="26.21474096485309" />
+      <entry key="M15" value="28.13927960055839" />
+      <entry key="M30" value="30.380149271167202" />
+      <entry key="H1" value="31.63831379416735" />
+      <entry key="H2" value="32.30562238754405" />
+      <entry key="H4" value="32.64935021212903" />
+      <entry key="D1" value="32.94107096336361" />
+      <entry key="W1" value="32.99156954118183" />
+    </decayedShown>
+  </component>
   <component name="ProjectColorInfo"><![CDATA[{
   "customColor": "",
   "associatedIndex": 3
@@ -83,14 +112,21 @@
     "codeWithMe.voiceChat.enabledByDefault": "false",
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/Lenovo/Desktop/人工智能项目/机器学习/data",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "python.packages.toolwindow.project.migrated.to.right.top.v2": "true"
+    "python.packages.toolwindow.project.migrated.to.right.top.v2": "true",
+    "settings.editor.selected.configurable": "editor.preferences.completion.popup"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Lenovo\Desktop\人工智能项目\机器学习\data" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -106,9 +142,30 @@
       <option name="presentableId" value="Default" />
       <updated>1793088618892</updated>
     </task>
+    <task id="LOCAL-00001" summary="Merge remote-tracking branch 'origin/master'">
+      <option name="closed" value="true" />
+      <created>1793089648196</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1793089648196</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Merge remote-tracking branch 'origin/master'">
+      <option name="closed" value="true" />
+      <created>1793089664839</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1793089664839</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Merge remote-tracking branch 'origin/master'" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge remote-tracking branch 'origin/master'" />
   </component>
 </project>
