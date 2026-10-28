@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ClaudeCodeTabState">
+    <option name="tabNames">
+      <map>
+        <entry key="0" value="机器学习" />
+      </map>
+    </option>
+    <option name="tabSessions">
+      <map>
+        <entry key="0">
+          <value>
+            <TabSessionState>
+              <option name="projectPath" value="C:\Users\Lenovo\Desktop\人工智能项目\机器学习" />
+              <option name="provider" value="claude" />
+              <option name="sessionId" value="ad77acfa-6bf9-4418-8e2a-fe2c6de966c0" />
+              <option name="cwd" value="C:\Users\Lenovo\Desktop\人工智能项目\机器学习" />
+              <option name="model" value="claude-sonnet-5-5[1m]" />
+              <option name="permissionMode" value="bypassPermissions" />
+            </TabSessionState>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
