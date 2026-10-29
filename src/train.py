@@ -28,6 +28,16 @@ MODELS = {
     "lasso": lambda alpha: Lasso(alpha=alpha),
 }
 
+# 项目根目录：src/train.py 的上一级
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
+DEFAULT_CONFIG = PROJECT_ROOT / "configs" / "config.yaml"
+
+
+def resolve_from_project_root(path_value) -> Path:
+    """相对路径按项目根目录解析，绝对路径原样返回。"""
+    path = Path(path_value)
+    return path if path.is_absolute() else PROJECT_ROOT / path
+
 
 def set_seed(seed: int) -> None:
     """固定随机种子，保证数据划分和训练结果可复现。"""
@@ -37,7 +47,8 @@ def set_seed(seed: int) -> None:
 
 def load_data(cfg: dict):
     """按配置读取数据，并按需构造 √微信 特征。"""
-    df = pd.read_csv(cfg["data"]["path"])
+    data_path = resolve_from_project_root(cfg["data"]["path"])
+    df = pd.read_csv(data_path)
     X = df[cfg["data"]["features"]].copy()
     if cfg["features"].get("add_sqrt_wechat", False):
         X["√微信"] = np.sqrt(X["微信"])
@@ -57,10 +68,22 @@ def evaluate(model, X, y) -> dict:
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--config", default="configs/config.yaml")
+    parser.add_argument(
+        "--config",
+        default=str(DEFAULT_CONFIG),
+        help="配置文件路径；相对路径找不到时按项目根目录解析",
+    )
     args = parser.parse_args()
 
     config_path = Path(args.config)
+    if not config_path.is_absolute():
+        # 优先按当前工作目录解析；找不到再按项目根目录解析
+        if not config_path.exists():
+            config_path = PROJECT_ROOT / config_path
+        config_path = config_path.resolve()
+    if not config_path.exists():
+        raise FileNotFoundError(f"配置文件不存在: {config_path}")
+
     with config_path.open(encoding="utf-8") as f:
         cfg = yaml.safe_load(f)
 
@@ -98,7 +121,7 @@ def main() -> None:
             f"RMSE = {metrics['RMSE']:.3f}  R² = {metrics['R2']:.3f}"
         )
 
-    report_dir = Path("reports")
+    report_dir = PROJECT_ROOT / "reports"
     report_dir.mkdir(parents=True, exist_ok=True)
     report_path = report_dir / "metrics.json"
     with report_path.open("w", encoding="utf-8") as f:

@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f5326c4-040b-4749-a846-bae102172d5d" name="更改" comment="2026/10/28">
+    <list default="true" id="4f5326c4-040b-4749-a846-bae102172d5d" name="更改" comment="2026/10/29">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notebooks/线性回归笔记.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/notebooks/线性回归笔记.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/推送测试.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/推送测试.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/metrics.json" beforeDir="false" afterPath="$PROJECT_DIR$/reports/metrics.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/train.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,61 +43,61 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.0000097917625241" />
-      <entry key="MS500" value="1.0995800120356978" />
-      <entry key="S2" value="1.5617499515158224" />
-      <entry key="S5" value="1.7939939942421712" />
-      <entry key="S10" value="1.8910635322887335" />
-      <entry key="S30" value="1.9802139978719455" />
-      <entry key="S60" value="2.3959768487731674" />
-      <entry key="M2" value="4.087892390031692" />
-      <entry key="M5" value="7.648364098863185" />
-      <entry key="M10" value="10.247251152894307" />
-      <entry key="M15" value="12.321220477503283" />
-      <entry key="M30" value="18.487940593554242" />
-      <entry key="H1" value="26.658200037751953" />
-      <entry key="H2" value="33.68407404260186" />
-      <entry key="H4" value="38.344039298150264" />
-      <entry key="D1" value="42.979274207383135" />
-      <entry key="W1" value="43.85214205873295" />
+      <entry key="MS100" value="1.0" />
+      <entry key="MS500" value="1.0" />
+      <entry key="S2" value="1.0" />
+      <entry key="S5" value="1.0" />
+      <entry key="S10" value="1.0" />
+      <entry key="S30" value="1.0000000000000002" />
+      <entry key="S60" value="1.0000000230428963" />
+      <entry key="M2" value="1.0004008913434628" />
+      <entry key="M5" value="1.1906248187368802" />
+      <entry key="M10" value="2.6177552776912933" />
+      <entry key="M15" value="4.599073303149438" />
+      <entry key="M30" value="10.992105677960236" />
+      <entry key="H1" value="20.598149365647814" />
+      <entry key="H2" value="29.881299733775123" />
+      <entry key="H4" value="36.50536006759297" />
+      <entry key="D1" value="43.43182917405311" />
+      <entry key="W1" value="44.77190827052337" />
     </decayedCancelled>
     <decayedSelected>
       <entry key="MS100" value="0.0" />
-      <entry key="MS500" value="2.772802192119633E-176" />
-      <entry key="S2" value="1.2909011229406313E-44" />
-      <entry key="S5" value="2.9049526795446785E-18" />
-      <entry key="S10" value="2.080911521550549E-9" />
-      <entry key="S30" value="0.002296329318929865" />
-      <entry key="S60" value="0.08114765299405649" />
-      <entry key="M2" value="0.4905350167277994" />
-      <entry key="M5" value="1.4522226907987734" />
-      <entry key="M10" value="2.134631303809016" />
-      <entry key="M15" value="2.6061918087436653" />
-      <entry key="M30" value="3.979591033196159" />
-      <entry key="H1" value="5.862740956787301" />
-      <entry key="H2" value="7.521758728811191" />
-      <entry key="H4" value="8.6360295705227" />
-      <entry key="D1" value="9.75301651853953" />
-      <entry key="W1" value="9.96420187307331" />
+      <entry key="MS500" value="0.0" />
+      <entry key="S2" value="4.004298070426452E-285" />
+      <entry key="S5" value="1.818831344854261E-114" />
+      <entry key="S10" value="1.6465703799687696E-57" />
+      <entry key="S30" value="2.1239440170766325E-19" />
+      <entry key="S60" value="7.804236300467508E-10" />
+      <entry key="M2" value="4.810577752756866E-5" />
+      <entry key="M5" value="0.03619462719357818" />
+      <entry key="M10" value="0.33699877226944946" />
+      <entry key="M15" value="0.7612781038097913" />
+      <entry key="M30" value="2.1508341590313598" />
+      <entry key="H1" value="4.310076179205824" />
+      <entry key="H2" value="6.449284255140393" />
+      <entry key="H4" value="7.996688535382877" />
+      <entry key="D1" value="9.628788258488013" />
+      <entry key="W1" value="9.945970935535733" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="1.2508592056471265E-5" />
-      <entry key="MS500" value="0.17184770483758008" />
-      <entry key="S2" value="1.079430680740515" />
-      <entry key="S5" value="1.5623778135914683" />
-      <entry key="S10" value="1.7676234068613483" />
-      <entry key="S30" value="1.9388297988914842" />
-      <entry key="S60" value="2.445603224261149" />
-      <entry key="M2" value="4.5405149692318565" />
-      <entry key="M5" value="9.06571016036423" />
-      <entry key="M10" value="12.357828370451335" />
-      <entry key="M15" value="14.908872009800078" />
-      <entry key="M30" value="22.45537438254444" />
-      <entry key="H1" value="32.51308942649481" />
-      <entry key="H2" value="41.20115247681956" />
-      <entry key="H4" value="46.977478655936714" />
-      <entry key="D1" value="52.731817536746824" />
-      <entry key="W1" value="53.81627521658143" />
+      <entry key="MS100" value="0.8235910172675731" />
+      <entry key="MS500" value="0.9619274546647747" />
+      <entry key="S2" value="0.9903428719330246" />
+      <entry key="S5" value="0.9961258995541646" />
+      <entry key="S10" value="0.9980610700524115" />
+      <entry key="S30" value="0.9993532718503374" />
+      <entry key="S60" value="0.9996766071462625" />
+      <entry key="M2" value="1.0002835578610407" />
+      <entry key="M5" value="1.2258855028943874" />
+      <entry key="M10" value="2.9509242339913166" />
+      <entry key="M15" value="5.354914160447638" />
+      <entry key="M30" value="13.136358476050088" />
+      <entry key="H1" value="24.90244796343783" />
+      <entry key="H2" value="36.326568328916586" />
+      <entry key="H4" value="44.4996488006319" />
+      <entry key="D1" value="53.060150045943175" />
+      <entry key="W1" value="54.71781058446849" />
     </decayedShown>
   </component>
   <component name="ProjectColorInfo">{
@@ -109,27 +109,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;KEY_CHAT_IN_TOOLWINDOW&quot;: &quot;false&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Lenovo/Desktop/人工智能项目/机器学习/data&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;python.packages.toolwindow.project.migrated.to.right.top.v2&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "KEY_CHAT_IN_TOOLWINDOW": "false",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python.train.executor": "Run",
+    "RunOnceActivity.MCP Project settings loaded": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/Lenovo/Desktop/人工智能项目/机器学习/data",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "python.packages.toolwindow.project.migrated.to.right.top.v2": "true",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Lenovo\Desktop\人工智能项目\机器学习\data" />
@@ -206,7 +207,15 @@
       <option name="project" value="LOCAL" />
       <updated>1793171362642</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="2026/10/29">
+      <option name="closed" value="true" />
+      <created>1793242974104</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1793242974104</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -214,8 +223,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Merge remote-tracking branch 'origin/master'" />
-    <MESSAGE value="2026/10/29" />
     <MESSAGE value="2026/10/28" />
-    <option name="LAST_COMMIT_MESSAGE" value="2026/10/28" />
+    <MESSAGE value="2026/10/29" />
+    <option name="LAST_COMMIT_MESSAGE" value="2026/10/29" />
   </component>
 </project>

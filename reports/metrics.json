@@ -14,10 +14,10 @@
       "random_state": 42
     },
     "features": {
-      "add_sqrt_wechat": false
+      "add_sqrt_wechat": true
     },
     "model": {
-      "name": "linear",
+      "name": "ridge",
       "alpha": 1.0
     }
   },
@@ -27,10 +27,10 @@
       "RMSE": 4.352,
       "R2": -0.013
     },
-    "linear": {
-      "MAE": 1.403,
-      "RMSE": 1.643,
-      "R2": 0.856
+    "ridge": {
+      "MAE": 1.171,
+      "RMSE": 1.459,
+      "R2": 0.886
     }
   }
 }
