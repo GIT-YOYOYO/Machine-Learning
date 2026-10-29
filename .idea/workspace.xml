@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f5326c4-040b-4749-a846-bae102172d5d" name="更改" comment="2026/10/28" />
+    <list default="true" id="4f5326c4-040b-4749-a846-bae102172d5d" name="更改" comment="2026/10/28">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notebooks/线性回归笔记.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/notebooks/线性回归笔记.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/推送测试.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/推送测试.ipynb" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -210,6 +214,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Merge remote-tracking branch 'origin/master'" />
+    <MESSAGE value="2026/10/29" />
     <MESSAGE value="2026/10/28" />
     <option name="LAST_COMMIT_MESSAGE" value="2026/10/28" />
   </component>

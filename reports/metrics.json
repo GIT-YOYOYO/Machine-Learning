@@ -1,0 +1,36 @@
+{
+  "config": {
+    "data": {
+      "path": "data/广告数据.csv",
+      "features": [
+        "微信",
+        "微博",
+        "抖音"
+      ],
+      "target": "销售额"
+    },
+    "split": {
+      "test_size": 0.2,
+      "random_state": 42
+    },
+    "features": {
+      "add_sqrt_wechat": false
+    },
+    "model": {
+      "name": "linear",
+      "alpha": 1.0
+    }
+  },
+  "result": {
+    "baseline": {
+      "MAE": 3.693,
+      "RMSE": 4.352,
+      "R2": -0.013
+    },
+    "linear": {
+      "MAE": 1.403,
+      "RMSE": 1.643,
+      "R2": 0.856
+    }
+  }
+}

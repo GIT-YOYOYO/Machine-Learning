@@ -1,0 +1,12 @@
+data:
+  path: data/广告数据.csv
+  features: [微信, 微博, 抖音]
+  target: 销售额
+split:
+  test_size: 0.2
+  random_state: 42       # 随机种子：划分数据、打乱顺序都用它
+features:
+  add_sqrt_wechat: true  # 是否加入 √微信 这个特征
+model:
+  name: ridge            # 可选 linear / ridge / lasso
+  alpha: 1.0             # 正则化强度，linear 时忽略
