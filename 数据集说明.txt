@@ -1,0 +1,61 @@
+红酒数据集说明
+
+一、文件与版本
+文件名：wine.csv
+版本：UCI Wine 数据集，与 scikit-learn 自带的 sklearn.datasets.load_wine() 为同一份数据，未做任何修改。
+格式：UTF-8 编码、英文列名、逗号分隔 CSV。
+规模：178 条数据，14 个字段（13 个特征 + 1 个类别标签）；另有 1 行表头。
+文件大小：12,261 字节。
+
+二、数据含义
+数据来自对意大利同一产区、三个不同葡萄品种所酿葡萄酒的化学分析，每行是一个酒样。
+预测目标 target 为酒样所属品种类别，是三分类问题。
+
+三、字段说明
+alcohol：酒精含量
+malic_acid：苹果酸
+ash：灰分
+alcalinity_of_ash：灰分碱度
+magnesium：镁
+total_phenols：总酚
+flavanoids：黄烷类
+nonflavanoid_phenols：非黄烷类酚
+proanthocyanins：原花青素
+color_intensity：颜色强度
+hue：色调
+od280/od315_of_diluted_wines：稀释酒样在 280nm/315nm 处的吸光度比值
+proline：脯氨酸
+target：品种类别，取值 0、1、2（对应 class_0、class_1、class_2）
+
+各类别记录数：
+0（class_0）：59 条
+1（class_1）：71 条
+2（class_2）：48 条
+
+四、核验
+1. 已确认 178 条记录和 14 列，所有字段均为数值，可直接解析。
+2. 无缺失值，无重复行。
+3. 13 个特征的量纲差异较大（如 proline 约 278～1680，hue 约 0.48～1.71）。
+
+SHA-256：
+cd80158fad3d1e203d61dae42242620b02dd5f918e637b5f08381e39e7cf5204
+
+五、Python 读取示例
+将代码运行目录设为本说明文件所在目录，需要安装 pandas。
+
+import pandas as pd
+df = pd.read_csv("wine.csv")
+X = df.drop(columns="target")
+y = df["target"]
+print(df.shape)
+print(y.value_counts())
+
+六、数据来源
+UCI Machine Learning Repository：Wine
+https://archive.ics.uci.edu/dataset/109/wine
+
+scikit-learn 说明：
+https://scikit-learn.org/stable/datasets/toy_dataset.html#wine-recognition-dataset
+
+原始研究：
+Forina, M. et al. PARVUS - An Extendible Package for Data Exploration, Classification and Correlation. Institute of Pharmaceutical and Food Analysis and Technologies, Genoa, Italy.
