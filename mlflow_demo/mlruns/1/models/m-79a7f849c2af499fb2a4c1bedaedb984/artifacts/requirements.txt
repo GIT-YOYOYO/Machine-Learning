@@ -1,0 +1,10 @@
+mlflow==3.18.0
+numpy==2.5.3
+pandas==3.0.6
+psutil==7.2.2
+pytest==9.1.1
+rich==15.0.0
+scikit-learn==1.9.1
+scipy==1.18.1
+skops==0.16.0
+torch==2.14.0

@@ -1,0 +1,36 @@
+artifact_path: "file:C:/Users/Lenovo/Desktop/\u4EBA\u5DE5\u667A\u80FD\u9879\u76EE\
+  /\u673A\u5668\u5B66\u4E60/mlflow_demo/mlruns/1/models/m-28fee50078bc45f594cb371d798f23b2/artifacts"
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.skops
+    predict_fn: predict
+    python_version: 3.13.5
+  sklearn:
+    code: null
+    pickled_model: model.skops
+    serialization_format: skops
+    sklearn_version: 1.9.1
+    skops_trusted_types:
+    - sklearn.metrics._dist_metrics.EuclideanDistance64
+    - sklearn.neighbors._kd_tree.KDTree
+is_signature_from_type_hint: false
+mlflow_version: 3.18.0
+model_id: m-28fee50078bc45f594cb371d798f23b2
+model_size_bytes: 21351
+model_uuid: m-28fee50078bc45f594cb371d798f23b2
+prompts: null
+run_id: 824756fcccb44b24aa8635c4e561fd90
+saved_input_example_info:
+  artifact_path: input_example.json
+  serving_input_path: serving_input_example.json
+  type: ndarray
+signature:
+  inputs: '[{"type": "tensor", "tensor-spec": {"dtype": "float64", "shape": [-1, 4]}}]'
+  outputs: '[{"type": "tensor", "tensor-spec": {"dtype": "int64", "shape": [-1]}}]'
+  params: null
+type_hint_from_example: false
+utc_time_created: '2026-11-06 00:08:44.686270'
