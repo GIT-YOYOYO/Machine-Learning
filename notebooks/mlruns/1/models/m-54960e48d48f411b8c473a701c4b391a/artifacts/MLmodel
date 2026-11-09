@@ -1,0 +1,24 @@
+artifact_path: "file:c:/Users/Lenovo/Desktop/\u4EBA\u5DE5\u667A\u80FD\u9879\u76EE\
+  /\u673A\u5668\u5B66\u4E60/notebooks/mlruns/1/models/m-54960e48d48f411b8c473a701c4b391a/artifacts"
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.pkl
+    predict_fn: predict
+    python_version: 3.13.5
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 1.9.1
+    skops_trusted_types: null
+mlflow_version: 3.18.0
+model_id: m-54960e48d48f411b8c473a701c4b391a
+model_size_bytes: 2499738
+model_uuid: m-54960e48d48f411b8c473a701c4b391a
+prompts: null
+run_id: 5c6a0dcdb57146e1af433987a3c17990
+utc_time_created: '2026-11-09 09:57:26.661839'
