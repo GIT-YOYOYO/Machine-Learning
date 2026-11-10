@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f5326c4-040b-4749-a846-bae102172d5d" name="更改" comment="2026/10/29" />
+    <list default="true" id="4f5326c4-040b-4749-a846-bae102172d5d" name="更改" comment="2026/10/29">
+      <change beforePath="$PROJECT_DIR$/notebooks/系统化的调参.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/notebooks/系统化的调参.ipynb" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
